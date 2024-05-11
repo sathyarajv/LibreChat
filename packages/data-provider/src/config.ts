@@ -306,6 +306,7 @@ export enum KnownEndpoints {
   cohere = 'cohere',
   fireworks = 'fireworks',
   groq = 'groq',
+  huggingface = 'huggingface',
   mistral = 'mistral',
   mlx = 'mlx',
   ollama = 'ollama',
@@ -459,13 +460,13 @@ export const supportsBalanceCheck = {
 };
 
 export const visionModels = [
+  'gpt-4-turbo',
   'gpt-4-vision',
   'llava',
   'llava-13b',
   'gemini-pro-vision',
   'claude-3',
   'gemini-1.5',
-  'gpt-4-turbo',
 ];
 export enum VisionModes {
   generative = 'generative',
@@ -654,6 +655,10 @@ export enum SettingsTabValues {
    */
   GENERAL = 'general',
   /**
+   * Tab for Messages Settings
+   */
+  MESSAGES = 'messages',
+  /**
    * Tab for Beta Features
    */
   BETA = 'beta',
@@ -670,7 +675,7 @@ export enum SettingsTabValues {
 /** Enum for app-wide constants */
 export enum Constants {
   /** Key for the app's version. */
-  VERSION = 'v0.7.1',
+  VERSION = 'v0.7.2',
   /** Key for the Custom Config's version (librechat.yaml). */
   CONFIG_VERSION = '1.0.9',
   /** Standard value for the first message's `parentMessageId` value, to indicate no parent exists. */
@@ -698,6 +703,21 @@ export enum LocalStorageKeys {
   FILES_TO_DELETE = 'filesToDelete',
   /** Prefix key for the last selected assistant ID by index */
   ASST_ID_PREFIX = 'assistant_id__',
+  /** Key for the last selected fork setting */
+  FORK_SETTING = 'forkSetting',
+  /** Key for remembering the last selected option, instead of manually selecting */
+  REMEMBER_FORK_OPTION = 'rememberForkOption',
+  /** Key for remembering the split at target fork option modifier */
+  FORK_SPLIT_AT_TARGET = 'splitAtTarget',
+}
+
+export enum ForkOptions {
+  /** Key for direct path option */
+  DIRECT_PATH = 'directPath',
+  /** Key for including branches */
+  INCLUDE_BRANCHES = 'includeBranches',
+  /** Key for target level fork (default) */
+  TARGET_LEVEL = '',
 }
 
 /**
